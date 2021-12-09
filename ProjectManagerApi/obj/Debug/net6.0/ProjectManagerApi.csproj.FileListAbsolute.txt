@@ -25,3 +25,8 @@
 /Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/obj/Debug/net6.0/ref/ProjectManagerApi.dll
 /Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/obj/Debug/net6.0/ProjectManagerApi.pdb
 /Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/obj/Debug/net6.0/ProjectManagerApi.genruntimeconfig.cache
+/Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/bin/Debug/net6.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+/Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/kerrybethrichardson/dev/capstone/project-manager-backend/ProjectManagerApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll

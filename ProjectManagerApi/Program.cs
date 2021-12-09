@@ -1,9 +1,28 @@
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
+using Microsoft.AspNetCore.Cors;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ProjectDb>(opt => opt.UseInMemoryDatabase("ProjectList"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddCors( opt => {
+    opt.AddDefaultPolicy(
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+        }
+    );
+});
+
 var app = builder.Build();
+
+app.UseCors( builder => {
+    builder.AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin();
+});
 
 app.MapGet("/", () => "Hello World!");
 
@@ -34,7 +53,10 @@ app.MapPut("/projectitems/{id}", async (int id, Project inputProject, ProjectDb 
     if (project is null) return Results.NotFound();
 
     project.Name = inputProject.Name;
+    project.Description = inputProject.Description;
     project.IsComplete = inputProject.IsComplete;
+    project.Wears = inputProject.Wears;
+    project.Photo = inputProject.Photo;
 
     await db.SaveChangesAsync();
 
@@ -59,7 +81,10 @@ class Project
 {
     public int Id { get; set; }
     public string? Name { get; set; }
+    public string? Description { get; set; }
     public bool IsComplete { get; set; }
+    public int Wears { get; set; }
+    public string? Photo { get; set; }
 }
 
 class ProjectDb : DbContext
